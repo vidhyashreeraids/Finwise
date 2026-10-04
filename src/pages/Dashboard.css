@@ -1,0 +1,1346 @@
+/* =========================================================
+   FINWISE PREMIUM DASHBOARD
+   Dashboard ONLY
+========================================================= */
+
+.finwise-dashboard {
+  --green-dark: #12382d;
+  --green: #1d4d3b;
+  --green-light: #3f765c;
+
+  --cream: #f7f3e9;
+  --white: #fffdf8;
+
+  --gold: #d8c783;
+
+  --text: #263a31;
+  --muted: #8b948e;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  background:
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(63, 118, 92, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(216, 199, 131, 0.07),
+      transparent 23%
+    ),
+    var(--cream);
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.finwise-dashboard .finwise-sidebar {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 255px;
+
+  padding: 30px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      180deg,
+      #102f26,
+      #173d31
+    );
+
+  color: white;
+
+  z-index: 100;
+
+  box-shadow:
+    8px 0 30px
+    rgba(18, 56, 45, 0.08);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.finwise-dashboard .finwise-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    3px 9px 35px;
+}
+
+.finwise-dashboard .logo-box {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eee1a7,
+      #c9b86e
+    );
+
+  color: #12382d;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.15);
+}
+
+.finwise-dashboard .finwise-logo h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 22px;
+
+  letter-spacing: -0.5px;
+}
+
+.finwise-dashboard .finwise-logo span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 7px;
+
+  letter-spacing: 2.5px;
+
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.finwise-dashboard .finwise-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.finwise-dashboard .nav-link {
+  position: relative;
+
+  min-height: 48px;
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border-radius: 14px;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  transition:
+    all 0.25s ease;
+}
+
+.finwise-dashboard .nav-link:hover {
+  color: white;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  transform:
+    translateX(3px);
+}
+
+.finwise-dashboard .nav-link.active {
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf8,
+      #f0ebdf
+    );
+
+  color: #12382d;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 25px
+    rgba(0, 0, 0, 0.08);
+}
+
+.finwise-dashboard .nav-link.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: -18px;
+
+  width: 3px;
+  height: 24px;
+
+  border-radius:
+    0 5px 5px 0;
+
+  background: var(--gold);
+}
+
+
+/* =========================================================
+   SIDEBAR TIP
+========================================================= */
+
+.finwise-dashboard .sidebar-tip {
+  margin-top: auto;
+
+  padding: 17px;
+
+  display: flex;
+
+  gap: 11px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+.finwise-dashboard .tip-icon {
+  font-size: 19px;
+}
+
+.finwise-dashboard .sidebar-tip p {
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+.finwise-dashboard .sidebar-tip strong {
+  color: #e5d59a;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.finwise-dashboard .finwise-main {
+  width: calc(100% - 255px);
+
+  margin-left: 255px;
+
+  padding:
+    0 42px 40px;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.finwise-dashboard .finwise-topbar {
+  min-height: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+
+  border-bottom:
+    1px solid #e4ded1;
+}
+
+.finwise-dashboard .top-label {
+  color: #969e98;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.finwise-dashboard .finwise-topbar h1 {
+  margin-top: 6px;
+
+  color: #12382d;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 29px;
+
+  letter-spacing: -0.7px;
+}
+
+.finwise-dashboard .user-avatar {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e0d29a,
+      #c8b66e
+    );
+
+  color: #12382d;
+
+  font-weight: 700;
+
+  border:
+    4px solid #fffdf8;
+
+  box-shadow:
+    0 8px 22px
+    rgba(18, 56, 45, 0.12);
+}
+
+
+/* =========================================================
+   FINANCIAL STRESS ML CARD
+========================================================= */
+
+.finwise-dashboard .financial-stress-card {
+  position: relative;
+
+  min-height: 310px;
+
+  padding:
+    38px 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-radius: 27px;
+
+  color: white;
+
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 25px 55px
+    rgba(18, 56, 45, 0.16);
+}
+
+.finwise-dashboard
+.financial-stress-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  right: -140px;
+  top: -220px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+}
+
+.finwise-dashboard
+.financial-stress-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 270px;
+  height: 270px;
+
+  right: 200px;
+  bottom: -200px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(216, 199, 131, 0.06);
+}
+
+
+/* LOW */
+
+.finwise-dashboard
+.financial-stress-card.stress-low {
+  background:
+    linear-gradient(
+      135deg,
+      #102f26,
+      #194737 50%,
+      #367257
+    );
+}
+
+
+/* MEDIUM */
+
+.finwise-dashboard
+.financial-stress-card.stress-medium {
+  background:
+    linear-gradient(
+      135deg,
+      #4e4728,
+      #71683a 55%,
+      #93844a
+    );
+}
+
+
+/* HIGH */
+
+.finwise-dashboard
+.financial-stress-card.stress-high {
+  background:
+    linear-gradient(
+      135deg,
+      #54332f,
+      #733f39 55%,
+      #96544d
+    );
+}
+
+
+/* DEFAULT */
+
+.finwise-dashboard
+.financial-stress-card.stress-neutral {
+  background:
+    linear-gradient(
+      135deg,
+      #102f26,
+      #285b47
+    );
+}
+
+
+/* =========================================================
+   STRESS CONTENT
+========================================================= */
+
+.finwise-dashboard .stress-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 650px;
+}
+
+.finwise-dashboard .stress-label {
+  margin-bottom: 11px;
+
+  color: #e8dcae;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.7px;
+}
+
+.finwise-dashboard .stress-content h2 {
+  margin-bottom: 11px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 39px;
+
+  letter-spacing: -0.8px;
+}
+
+.finwise-dashboard .stress-description {
+  max-width: 580px;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+.finwise-dashboard .stress-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.finwise-dashboard .stress-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.1);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  font-weight: 700;
+}
+
+.finwise-dashboard .stress-status span {
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.43);
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+.finwise-dashboard .stress-status strong {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 18px;
+}
+
+.finwise-dashboard .stress-message {
+  margin-top: 14px;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   ML RESULT
+========================================================= */
+
+.finwise-dashboard .stress-result {
+  position: relative;
+
+  z-index: 2;
+
+  min-width: 245px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.finwise-dashboard .stress-circle {
+  width: 180px;
+  height: 180px;
+
+  padding: 8px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.23);
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  box-shadow:
+    0 0 0 10px
+    rgba(255, 255, 255, 0.018),
+    0 0 0 22px
+    rgba(255, 255, 255, 0.01);
+
+  backdrop-filter:
+    blur(10px);
+}
+
+.finwise-dashboard .stress-circle-inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.075);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.finwise-dashboard .stress-circle-icon {
+  color: #eadc9f;
+
+  font-size: 18px;
+}
+
+.finwise-dashboard .stress-circle strong {
+  margin-top: 3px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 25px;
+}
+
+.finwise-dashboard .stress-circle small {
+  margin-top: 4px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+.finwise-dashboard .model-label {
+  margin-top: 16px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 7px;
+
+  letter-spacing: 2.2px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.finwise-dashboard .financial-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.finwise-dashboard .stat-card {
+  position: relative;
+
+  padding: 21px;
+
+  overflow: hidden;
+
+  border:
+    1px solid #e5dfd2;
+
+  border-radius: 19px;
+
+  background:
+    rgba(255, 253, 248, 0.9);
+
+  box-shadow:
+    0 7px 22px
+    rgba(18, 56, 45, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.finwise-dashboard .stat-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 16px 35px
+    rgba(18, 56, 45, 0.08);
+}
+
+.finwise-dashboard .stat-card > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #949c96;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.finwise-dashboard .stat-card h3 {
+  color: #12382d;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 25px;
+}
+
+.finwise-dashboard .stat-card p {
+  margin-top: 5px;
+
+  color: #9ba19c;
+
+  font-size: 9px;
+}
+
+.finwise-dashboard .stat-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 11px;
+
+  font-weight: 700;
+}
+
+.finwise-dashboard .stat-icon.income {
+  background: #e4f0e6;
+  color: #397457;
+}
+
+.finwise-dashboard .stat-icon.expense {
+  background: #f5e5e1;
+  color: #a4564e;
+}
+
+.finwise-dashboard .stat-icon.savings {
+  background: #f0e9d0;
+  color: #88752e;
+}
+
+.finwise-dashboard .stat-icon.rate {
+  background: #e4ece7;
+  color: #37694f;
+}
+
+
+/* =========================================================
+   LOWER CARDS
+========================================================= */
+
+.finwise-dashboard .dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.finwise-dashboard .dashboard-card {
+  padding: 25px;
+
+  border:
+    1px solid #e5dfd2;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 253, 248, 0.9);
+
+  box-shadow:
+    0 7px 22px
+    rgba(18, 56, 45, 0.04);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.finwise-dashboard .card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.finwise-dashboard .card-header > div > span {
+  color: #989f99;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+}
+
+.finwise-dashboard .card-header h3 {
+  margin-top: 5px;
+
+  color: #12382d;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 20px;
+}
+
+.finwise-dashboard .card-header > strong {
+  color: var(--green-light);
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   SAVINGS PROGRESS
+========================================================= */
+
+.finwise-dashboard .saving-number {
+  margin:
+    24px 0 15px;
+
+  color: #12382d;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 31px;
+}
+
+.finwise-dashboard .progress-track {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #ebe6da;
+}
+
+.finwise-dashboard .progress-fill {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #275d47,
+      #72a084
+    );
+}
+
+.finwise-dashboard .progress-text {
+  margin-top: 11px;
+
+  color: #8f9791;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   AI INSIGHT
+========================================================= */
+
+.finwise-dashboard .ai-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf8,
+      #f0ede1
+    );
+}
+
+.finwise-dashboard .ai-card::after {
+  content: "✦";
+
+  position: absolute;
+
+  right: 18px;
+  bottom: -35px;
+
+  color:
+    rgba(40, 93, 73, 0.045);
+
+  font-size: 140px;
+}
+
+.finwise-dashboard
+.ai-card
+.card-header
+> div
+> span {
+  color: #557b64;
+}
+
+.finwise-dashboard .live {
+  color: #4b8665;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.finwise-dashboard .ai-text {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 21px 0;
+
+  max-width: 580px;
+
+  color: #5c6861;
+
+  font-size: 11px;
+
+  line-height: 1.8;
+}
+
+.finwise-dashboard .ai-button {
+  position: relative;
+
+  z-index: 3;
+
+  display: inline-block;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  background: #12382d;
+
+  color: white;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.finwise-dashboard .ai-button:hover {
+  background: #285d49;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   TRANSACTIONS
+========================================================= */
+
+.finwise-dashboard .transactions-card {
+  margin-bottom: 24px;
+}
+
+.finwise-dashboard .view-link {
+  color: var(--green-light);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.finwise-dashboard .transaction-list {
+  margin-top: 18px;
+}
+
+.finwise-dashboard .transaction-row {
+  display: flex;
+
+  align-items: center;
+
+  padding: 13px 0;
+
+  border-top:
+    1px solid #eee9df;
+}
+
+.finwise-dashboard .transaction-icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px;
+
+  border-radius: 11px;
+
+  font-weight: 700;
+}
+
+.finwise-dashboard .transaction-income {
+  background: #e4f0e6;
+
+  color: #397457;
+}
+
+.finwise-dashboard .transaction-expense {
+  background: #f5e4e1;
+
+  color: #a4564e;
+}
+
+.finwise-dashboard .transaction-details {
+  flex: 1;
+}
+
+.finwise-dashboard .transaction-details strong {
+  display: block;
+
+  color: #35463e;
+
+  font-size: 11px;
+}
+
+.finwise-dashboard .transaction-details span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9a9f9b;
+
+  font-size: 8px;
+}
+
+.finwise-dashboard .income-amount {
+  color: #397457;
+
+  font-size: 11px;
+}
+
+.finwise-dashboard .expense-amount {
+  color: #a4564e;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.finwise-dashboard .empty-state {
+  padding:
+    45px 20px 25px;
+
+  text-align: center;
+}
+
+.finwise-dashboard .empty-state > div {
+  width: 55px;
+  height: 55px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f0ead8;
+
+  color: #8a7737;
+
+  font-size: 20px;
+}
+
+.finwise-dashboard .empty-state h3 {
+  margin-top: 13px;
+
+  color: #12382d;
+
+  font-family:
+    "Playfair Display",
+    serif;
+}
+
+.finwise-dashboard .empty-state p {
+  margin:
+    7px 0 15px;
+
+  color: #969d98;
+
+  font-size: 10px;
+}
+
+.finwise-dashboard .add-button {
+  display: inline-block;
+
+  padding:
+    10px 17px;
+
+  border-radius: 10px;
+
+  background: #12382d;
+
+  color: white;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.finwise-dashboard .dashboard-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding:
+    8px 2px;
+
+  color: #a1a6a1;
+
+  font-size: 8px;
+}
+
+.finwise-dashboard .dashboard-footer strong {
+  color: var(--green-light);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+  .finwise-dashboard
+  .financial-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .finwise-dashboard
+  .finwise-sidebar {
+    width: 76px;
+
+    padding:
+      22px 10px;
+  }
+
+
+  .finwise-dashboard
+  .finwise-logo
+  > div:last-child,
+
+  .finwise-dashboard
+  .nav-link
+  span:not(.nav-icon),
+
+  .finwise-dashboard
+  .sidebar-tip {
+    display: none;
+  }
+
+
+  .finwise-dashboard
+  .finwise-logo {
+    justify-content: center;
+  }
+
+
+  .finwise-dashboard
+  .nav-link {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  .finwise-dashboard
+  .finwise-main {
+    width:
+      calc(100% - 76px);
+
+    margin-left: 76px;
+
+    padding:
+      0 22px 30px;
+  }
+
+
+  .finwise-dashboard
+  .financial-stress-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 30px;
+  }
+
+
+  .finwise-dashboard
+  .stress-result {
+    align-self: center;
+  }
+
+
+  .finwise-dashboard
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .finwise-dashboard
+  .finwise-main {
+    padding:
+      0 14px 25px;
+  }
+
+
+  .finwise-dashboard
+  .financial-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .finwise-dashboard
+  .financial-stress-card {
+    padding: 28px;
+  }
+
+
+  .finwise-dashboard
+  .stress-content h2 {
+    font-size: 30px;
+  }
+
+
+  .finwise-dashboard
+  .stress-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+
+  .finwise-dashboard
+  .dashboard-footer {
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+}
