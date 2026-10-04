@@ -203,14 +203,6 @@ function Dashboard() {
           );
           return;
         }
-
-        if (transactions.length === 0) {
-          setStressLevel(
-            "Not enough data"
-          );
-          return;
-        }
-
         setLoadingStress(true);
         setPredictionError("");
 
