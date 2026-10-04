@@ -28,7 +28,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:5174",
-        "finwise-oe9p.vercel.app"
+        "https://finwise-gamma.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
